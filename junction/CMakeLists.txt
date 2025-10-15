@@ -70,7 +70,10 @@ runtime_kthreads ${n_kthreads}
 runtime_spinning_kthreads 0
 runtime_guaranteed_kthreads 0
 runtime_priority lc
-runtime_quantum_us 0"
+runtime_quantum_us 0
+runtime_lame_register nop
+runtime_lame_bundle_size 2
+runtime_lame_tsc off"
 )
 set(caladan_test_config_path
   ${CMAKE_CURRENT_BINARY_DIR}/caladan_test.config
