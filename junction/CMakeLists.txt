@@ -70,15 +70,32 @@ runtime_kthreads ${n_kthreads}
 runtime_spinning_kthreads 0
 runtime_guaranteed_kthreads 0
 runtime_priority lc
-runtime_quantum_us 0
-runtime_lame_register nop
-runtime_lame_bundle_size 2
-runtime_lame_tsc off"
+runtime_quantum_us 0"
 )
 set(caladan_test_config_path
   ${CMAKE_CURRENT_BINARY_DIR}/caladan_test.config
 )
 file(WRITE ${caladan_test_config_path} ${caladan_test_config})
+
+# linanqinqin 
+set(lame_config
+"host_addr 192.168.127.7
+host_netmask 255.255.255.0
+host_gateway 192.168.127.1
+runtime_kthreads 2
+runtime_spinning_kthreads 0
+runtime_guaranteed_kthreads 0
+runtime_priority lc
+runtime_quantum_us 0
+runtime_lame_register pmu
+runtime_lame_bundle_size 2
+runtime_lame_tsc off"
+)
+set(lame_config_path
+  ${CMAKE_CURRENT_BINARY_DIR}/lame.config
+)
+file(WRITE ${lame_config_path} ${lame_config})
+# end
 
 set(caladan_test_config_st
 "host_addr 192.168.127.7
